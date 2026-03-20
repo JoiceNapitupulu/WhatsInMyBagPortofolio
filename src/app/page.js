@@ -75,7 +75,7 @@ function PortfolioItem({ url, targetHeight, position, visible, opacity = 1, onCl
   );
 }
 
-// --- KOMPONEN KARTU KIPAS ALA LANDO NORRIS (NON-DRAGABLE, HOVER FOKUS & BISA FLIP!) ---
+// --- KOMPONEN KARTU KIPAS (HOVER FOKUS & BISA FLIP!) ---
 function HoverFanCard({ url, targetHeight, position, rotation = [0, 0, 0], visible, startPosition = [0, -1, 0], description }) {
   const texture = useTexture(url);
   const outerGroupRef = useRef(); 
@@ -92,7 +92,7 @@ function HoverFanCard({ url, targetHeight, position, rotation = [0, 0, 0], visib
 
     const isHovered = (hovered || isFlipped) && visible;
 
-    // FIX FLIP POSITION: Kalau di-flip, kartu pindah ke tengah layar biar gampang dibaca!
+    // FIX FLIP: Pindah ke tengah dan maju biar gampang dibaca
     const targetX = visible ? (isFlipped ? 0 : position[0]) : startPosition[0];
     const targetY = visible ? (isFlipped ? 1.5 : (isHovered ? position[1] + 0.4 : position[1])) : startPosition[1];
     const targetZ = visible ? (isFlipped ? 4.5 : (isHovered ? position[2] + 1.5 : position[2])) : startPosition[2];
@@ -100,9 +100,8 @@ function HoverFanCard({ url, targetHeight, position, rotation = [0, 0, 0], visib
     const targetRotY = visible ? (isFlipped ? Math.PI : 0) : 0; 
     const targetRotZ = visible ? (isFlipped ? 0 : (isHovered ? 0 : rotation[2])) : 0;
 
-    // Kalau di flip, membesar sedikit biar tulisan jelas
     const targetScale = visible ? (isFlipped ? 1.3 : (isHovered ? 1.15 : 1)) : 0;
-    const targetOpacity = visible ? (isFlipped ? 0.1 : 1) : 0;
+    const targetOpacity = visible ? (isFlipped ? 0.05 : 1) : 0; 
     const speed = 6; 
 
     outerGroupRef.current.position.x = THREE.MathUtils.lerp(outerGroupRef.current.position.x, targetX, delta * speed);
@@ -145,16 +144,20 @@ function HoverFanCard({ url, targetHeight, position, rotation = [0, 0, 0], visib
         }}
       />
       
-      {/* HTML OVERLAY */}
+      {/* HTML OVERLAY (Panel Belakang) */}
       {description && isFlipped && (
         <Html 
           transform 
           distanceFactor={1.5} 
           position={[0, 0, -0.01]} 
           rotation={[0, Math.PI, 0]} 
+          zIndexRange={[100, 0]} // Pastikan z-index tinggi biar bisa diklik
         >
-          {/* FIX UKURAN & BENTUK: rounded-none dan ukuran portrait 340x520 */}
-          <div className="w-[340px] h-[520px] overflow-y-auto bg-[#1a0505] p-8 rounded-none shadow-2xl text-white">
+          {/* FIX: rounded-none, ukuran tinggi memanjang, bg solid */}
+          <div 
+            onClick={handleCardClick}
+            className="w-[420px] h-[680px] overflow-y-auto bg-[#1a0505] p-10 rounded-none shadow-2xl text-white cursor-pointer pointer-events-auto flex flex-col justify-center border border-white/10"
+          >
             {description}
           </div>
         </Html>
@@ -197,15 +200,15 @@ export default function Home() {
 
   // --- KONTEN DESKRIPSI NYEPI ---
   const nyepiDescription = (
-    <div className="text-[13px] font-sans flex flex-col gap-4">
-      <h2 className="text-xl font-black mb-1 text-[#A81F30] tracking-tighter uppercase leading-tight">Project Overview:<br/>Hari Raya Nyepi Greeting<br/><span className="text-white/70 text-sm">Del Programming Club</span></h2>
-      <p className="text-white/90 leading-relaxed font-medium pb-2 border-b border-white/10">
+    <div className="text-[14px] font-sans flex flex-col gap-5">
+      <h2 className="text-2xl font-black mb-2 text-[#A81F30] tracking-tighter uppercase leading-tight">Project Overview:<br/>Hari Raya Nyepi Greeting<br/><span className="text-white/70 text-lg">Del Programming Club</span></h2>
+      <p className="text-white/90 leading-relaxed font-medium pb-4 border-b border-white/10">
         This project focused on creating a commemorative visual for Hari Raya Nyepi (Saka New Year 1948) for the Del Programming Club (Delpro). The objective was to design a greeting that conveys peace and reflection, blending modern graphic techniques with traditional cultural elements.
       </p>
       
       <div className="flex flex-col gap-2">
-        <h3 className="font-bold text-base text-white">Key Highlights</h3>
-        <ul className="list-disc pl-4 space-y-2 text-white/80">
+        <h3 className="font-bold text-lg text-white">Key Highlights</h3>
+        <ul className="list-disc pl-5 space-y-3 text-white/80">
           <li><strong className="text-[#A81F30]">Visual Strategy:</strong> Integrated a halftone pattern into the background to provide a contemporary texture and visual depth to the photograph of the Pura Ulun Danu.</li>
           <li><strong className="text-[#A81F30]">Typography:</strong> Utilized a high-contrast font pairing—an elegant script for "Selamat" and a bold, structured sans-serif for "Hari Raya Nyepi"—to establish a clear and engaging visual hierarchy.</li>
           <li><strong className="text-[#A81F30]">Branding Integration:</strong> Strategically placed Delpro’s identity in the header and footer (including the club's email and Instagram handle) to maintain brand consistency for social media distribution.</li>
@@ -213,9 +216,9 @@ export default function Home() {
         </ul>
       </div>
 
-      <div className="flex flex-col gap-2 pt-2 border-t border-white/10">
-        <h3 className="font-bold text-base text-white">Tools Used</h3>
-        <ul className="list-disc pl-4 text-white/80">
+      <div className="flex flex-col gap-2 pt-4 border-t border-white/10">
+        <h3 className="font-bold text-lg text-white">Tools Used</h3>
+        <ul className="list-disc pl-5 text-white/80">
           <li><strong className="text-[#A81F30]">Canva:</strong> Used for the entire layout process, asset editing, filter applications, and final graphic composition.</li>
         </ul>
       </div>
@@ -266,9 +269,7 @@ export default function Home() {
             onClick={handleFolderClick} 
           />
 
-          {/* KARTU KIPAS */}
-          
-          {/* KARTU NYEPI (Dengan deskripsi flip) */}
+          {/* KARTU NYEPI (Bisa diflip & diklik balik!) */}
           <HoverFanCard 
             url="/Nyepi.png"   
             targetHeight={cardHeight}       
