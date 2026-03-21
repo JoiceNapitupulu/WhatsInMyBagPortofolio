@@ -95,7 +95,7 @@ export default function About() {
               <a href="https://instagram.com/jooicean" target="_blank" rel="noreferrer" className="bg-black text-white px-5 py-2.5 rounded-full font-bold text-sm hover:scale-105 hover:bg-neutral-800 transition-all shadow-md flex items-center gap-2">
                 📸 Instagram
               </a>
-              <a href="https://linkedin.com/in/joicenapitupulu" target="_blank" rel="noreferrer" className="bg-black text-white px-5 py-2.5 rounded-full font-bold text-sm hover:scale-105 hover:bg-neutral-800 transition-all shadow-md flex items-center gap-2">
+              <a href="https://linkedin.com/in/jooicean" target="_blank" rel="noreferrer" className="bg-black text-white px-5 py-2.5 rounded-full font-bold text-sm hover:scale-105 hover:bg-neutral-800 transition-all shadow-md flex items-center gap-2">
                 💼 LinkedIn
               </a>
               <a href="https://github.com/joicenapitupulu" target="_blank" rel="noreferrer" className="bg-black text-white px-5 py-2.5 rounded-full font-bold text-sm hover:scale-105 hover:bg-neutral-800 transition-all shadow-md flex items-center gap-2">
