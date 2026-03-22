@@ -134,6 +134,9 @@ export default function Home() {
   const [folderStep, setFolderStep] = useState(0); 
   const [aboutStep, setAboutStep] = useState(0);
   const [soraStep, setSoraStep] = useState(0);
+  
+  // STATE BARU UNTUK WHOOSH
+  const [whooshStep, setWhooshStep] = useState(0);
 
   const uniformHeight = 2; 
   const cardHeight = 3.5; 
@@ -144,6 +147,7 @@ export default function Home() {
       setFolderStep(0); 
       setAboutStep(0);
       setSoraStep(0); 
+      setWhooshStep(0); // Reset Whoosh
     }
   };
 
@@ -151,6 +155,7 @@ export default function Home() {
     e.stopPropagation();
     setAboutStep(0); 
     setSoraStep(0);
+    setWhooshStep(0);
     setFolderStep((prev) => (prev + 1) % 3);
   };
 
@@ -159,6 +164,7 @@ export default function Home() {
     if (aboutStep === 0) {
       setFolderStep(0); 
       setSoraStep(0);
+      setWhooshStep(0);
       setAboutStep(1); 
     } else if (aboutStep === 1) {
       router.push('/about'); 
@@ -170,13 +176,27 @@ export default function Home() {
     if (soraStep === 0) {
       setFolderStep(0);
       setAboutStep(0);
+      setWhooshStep(0);
       setSoraStep(1); 
     } else if (soraStep === 1) {
       router.push('/sora'); 
     }
   };
 
-  const isFocusingAny = folderStep > 0 || aboutStep > 0 || soraStep > 0;
+  // LOGIKA KLIK WHOOSH
+  const handleWhooshClick = (e) => {
+    e.stopPropagation();
+    if (whooshStep === 0) {
+      setFolderStep(0);
+      setAboutStep(0);
+      setSoraStep(0);
+      setWhooshStep(1); 
+    } else if (whooshStep === 1) {
+      router.push('/whoosh'); 
+    }
+  };
+
+  const isFocusingAny = folderStep > 0 || aboutStep > 0 || soraStep > 0 || whooshStep > 0;
   const fadeOutOpacity = isFocusingAny ? 0.05 : 1; 
 
   let gdPosition = [0, 2.5, 1]; 
@@ -191,6 +211,11 @@ export default function Home() {
   let soraPosition = [-3.5, 2, 1];
   let soraOpacity = soraStep > 0 ? 1 : fadeOutOpacity;
   if (soraStep === 1) soraPosition = [0, 0, 3.5];
+
+  // POSISI WHOOSH
+  let whooshPosition = [4.5, 0, 1];
+  let whooshOpacity = whooshStep > 0 ? 1 : fadeOutOpacity;
+  if (whooshStep === 1) whooshPosition = [0, 0, 3.5];
 
   const explodeStartPos = [0, 0, 3.5]; 
 
@@ -302,7 +327,17 @@ export default function Home() {
           />
 
           <PortfolioItem url="/scholarsaveapp.png" targetHeight={uniformHeight} position={[3.5, 2, 1]} visible={showAbout} opacity={fadeOutOpacity} />
-          <PortfolioItem url="/whooshapp.png" targetHeight={uniformHeight} position={[4.5, 0, 1]} visible={showAbout} opacity={fadeOutOpacity} />
+          
+          {/* --- WHOOSH CARD YANG SUDAH INTERAKTIF --- */}
+          <PortfolioItem 
+            url="/whooshapp.png" 
+            targetHeight={whooshStep === 1 ? 2.5 : uniformHeight} 
+            position={whooshPosition} 
+            visible={showAbout} 
+            opacity={whooshOpacity} 
+            onClick={handleWhooshClick}
+          />
+
           <PortfolioItem url="/joydeeapp.png" targetHeight={uniformHeight} position={[-3.5, -2, 1]} visible={showAbout} opacity={fadeOutOpacity} />
           <PortfolioItem url="/studycase.png" targetHeight={uniformHeight} position={[3.5, -2, 1]} visible={showAbout} opacity={fadeOutOpacity} />
           

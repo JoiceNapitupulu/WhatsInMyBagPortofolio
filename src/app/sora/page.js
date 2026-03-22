@@ -46,7 +46,7 @@ export default function SoraCaseStudy() {
               Digitalizing Lake Toba's Water Transportation. <br/><strong className="text-white">Your Freedom, On the Water.</strong>
             </p>
             
-            {/* Button Explore Now - LINK DIPERBARUI */}
+            {/* Button Explore Now */}
             <div className="mt-8 flex justify-center md:justify-start">
               <a 
                 href="https://www.figma.com/proto/9YcaCf0sZvmT2HfLinBQIp/Sora-kelompok-10?node-id=392-348&t=gBRAoWq0o64tAori-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=392%3A2" 
@@ -69,7 +69,7 @@ export default function SoraCaseStudy() {
 
       <div className="max-w-6xl mx-auto px-6 mt-20 space-y-28">
 
-        {/* OVERVIEW SECTION */}
+        {/* OVERVIEW SECTION DENGAN TAMBAHAN KONTEKS */}
         <section className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
           <div className="md:col-span-1 sticky top-24">
             <h2 className="text-3xl font-black text-[#0C2D6B] mb-4">Project Overview</h2>
@@ -77,7 +77,7 @@ export default function SoraCaseStudy() {
           </div>
           <div className="md:col-span-2 text-lg text-slate-700 leading-relaxed space-y-6">
             <p>
-              Sora (Samosir E-Boat) is a mobile application platform designed to provide tourists with a seamless, practical, and transparent way to book and pay for water transportation in the Samosir region of Lake Toba.
+              Created as a final project for the <strong>Technopreneurship</strong> course, Sora (Samosir E-Boat) is a mobile application platform designed to provide tourists with a seamless, practical, and transparent way to book and pay for water transportation in the Samosir region of Lake Toba.
             </p>
             <p>
               Inspired by the "sounds" of nature—waves, wind, and the laughter of adventurers—Sora acts as a digital bridge between travelers and local boat operators. It aims to empower tourists to plan their trips with price certainty while helping local boat associations manage their schedules and revenue more efficiently.
@@ -224,7 +224,6 @@ export default function SoraCaseStudy() {
         <section className="pt-10 border-t border-slate-200">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-black text-[#0C2D6B] mb-4">Design Showcase</h2>
-            <p className="text-slate-500 max-w-2xl mx-auto">High-fidelity screens rendered with pure CSS device frames.</p>
             <div className="w-16 h-1.5 bg-[#2980B9] rounded-full mx-auto mt-6"></div>
           </div>
 
