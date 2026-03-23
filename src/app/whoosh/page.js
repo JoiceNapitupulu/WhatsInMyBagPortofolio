@@ -23,7 +23,7 @@ export default function WhooshCaseStudy() {
       <nav className="w-full bg-[#F4F6F4]/80 backdrop-blur-md border-b border-[#D8DED5] sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
           <Link href="/" className="text-[#546654] font-bold text-sm hover:underline flex items-center gap-2">
-            <span>←</span> Back to Portfolio
+            <span>←</span> Back to Bag
           </Link>
           <div className="font-black tracking-tighter text-xl text-[#546654] flex items-center gap-2">
             WHOOSHH<span className="text-[#8C9C85]">.</span>

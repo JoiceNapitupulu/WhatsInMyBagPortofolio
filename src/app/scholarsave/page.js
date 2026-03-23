@@ -23,7 +23,7 @@ export default function ScholarSaveCaseStudy() {
       <nav className="w-full bg-white/80 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
           <Link href="/" className="text-[#1E3A8A] font-bold text-sm hover:underline flex items-center gap-2">
-            <span>←</span> Back to Portfolio
+            <span>←</span> Back to Bag
           </Link>
           <div className="font-black tracking-tighter text-xl text-[#1E3A8A] flex items-center gap-2">
             ScholarSave<span className="text-[#3B82F6]">.</span>
