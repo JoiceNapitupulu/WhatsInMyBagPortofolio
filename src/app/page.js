@@ -134,9 +134,10 @@ export default function Home() {
   const [folderStep, setFolderStep] = useState(0); 
   const [aboutStep, setAboutStep] = useState(0);
   const [soraStep, setSoraStep] = useState(0);
-  
-  // STATE BARU UNTUK WHOOSH
   const [whooshStep, setWhooshStep] = useState(0);
+  
+  // STATE BARU UNTUK SCHOLARSAVE
+  const [scholarStep, setScholarStep] = useState(0);
 
   const uniformHeight = 2; 
   const cardHeight = 3.5; 
@@ -147,7 +148,8 @@ export default function Home() {
       setFolderStep(0); 
       setAboutStep(0);
       setSoraStep(0); 
-      setWhooshStep(0); // Reset Whoosh
+      setWhooshStep(0); 
+      setScholarStep(0); // Reset ScholarSave
     }
   };
 
@@ -156,6 +158,7 @@ export default function Home() {
     setAboutStep(0); 
     setSoraStep(0);
     setWhooshStep(0);
+    setScholarStep(0);
     setFolderStep((prev) => (prev + 1) % 3);
   };
 
@@ -165,6 +168,7 @@ export default function Home() {
       setFolderStep(0); 
       setSoraStep(0);
       setWhooshStep(0);
+      setScholarStep(0);
       setAboutStep(1); 
     } else if (aboutStep === 1) {
       router.push('/about'); 
@@ -177,26 +181,41 @@ export default function Home() {
       setFolderStep(0);
       setAboutStep(0);
       setWhooshStep(0);
+      setScholarStep(0);
       setSoraStep(1); 
     } else if (soraStep === 1) {
       router.push('/sora'); 
     }
   };
 
-  // LOGIKA KLIK WHOOSH
   const handleWhooshClick = (e) => {
     e.stopPropagation();
     if (whooshStep === 0) {
       setFolderStep(0);
       setAboutStep(0);
       setSoraStep(0);
+      setScholarStep(0);
       setWhooshStep(1); 
     } else if (whooshStep === 1) {
       router.push('/whoosh'); 
     }
   };
 
-  const isFocusingAny = folderStep > 0 || aboutStep > 0 || soraStep > 0 || whooshStep > 0;
+  // LOGIKA KLIK SCHOLARSAVE
+  const handleScholarClick = (e) => {
+    e.stopPropagation();
+    if (scholarStep === 0) {
+      setFolderStep(0);
+      setAboutStep(0);
+      setSoraStep(0);
+      setWhooshStep(0);
+      setScholarStep(1); 
+    } else if (scholarStep === 1) {
+      router.push('/scholarsave'); 
+    }
+  };
+
+  const isFocusingAny = folderStep > 0 || aboutStep > 0 || soraStep > 0 || whooshStep > 0 || scholarStep > 0;
   const fadeOutOpacity = isFocusingAny ? 0.05 : 1; 
 
   let gdPosition = [0, 2.5, 1]; 
@@ -212,16 +231,20 @@ export default function Home() {
   let soraOpacity = soraStep > 0 ? 1 : fadeOutOpacity;
   if (soraStep === 1) soraPosition = [0, 0, 3.5];
 
-  // POSISI WHOOSH
   let whooshPosition = [4.5, 0, 1];
   let whooshOpacity = whooshStep > 0 ? 1 : fadeOutOpacity;
   if (whooshStep === 1) whooshPosition = [0, 0, 3.5];
+
+  // POSISI SCHOLARSAVE
+  let scholarPosition = [3.5, 2, 1];
+  let scholarOpacity = scholarStep > 0 ? 1 : fadeOutOpacity;
+  if (scholarStep === 1) scholarPosition = [0, 0, 3.5];
 
   const explodeStartPos = [0, 0, 3.5]; 
 
   const nyepiDesc = (
     <div className="text-[13px] font-sans flex flex-col gap-4">
-      <h2 className="text-[22px] font-black leading-tight text-[#A81F30] uppercase tracking-tighter">Project Overview: Hari Raya Nyepi Greeting – Del Programming Club</h2>
+      <h2 className="text-[22px] font-black leading-tight text-[#A81F30] uppercase tracking-tighter">Project Overview: Hari Raya Nyepi Greeting</h2>
       <p className="text-white/90 leading-relaxed font-medium pb-3 border-b border-white/10">This project focused on creating a commemorative visual for Hari Raya Nyepi (Saka New Year 1948) for the Del Programming Club (Delpro). The objective was to design a greeting that conveys peace and reflection, blending modern graphic techniques with traditional cultural elements.</p>
       <div className="flex flex-col gap-2">
         <h3 className="font-bold text-[16px] text-white">Key Highlights</h3>
@@ -241,7 +264,7 @@ export default function Home() {
   
   const cnyDesc = (
     <div className="text-[13px] font-sans flex flex-col gap-4">
-      <h2 className="text-[22px] font-black leading-tight text-[#D32F2F] uppercase tracking-tighter">Project Overview: Chinese New Year Greeting – Del Programming Club</h2>
+      <h2 className="text-[22px] font-black leading-tight text-[#D32F2F] uppercase tracking-tighter">Project Overview: Chinese New Year Greeting</h2>
       <p className="text-white/90 leading-relaxed font-medium pb-3 border-b border-white/10">This project involved designing a celebratory digital poster for Chinese New Year 2026, specifically honoring the Year of the Horse, for the Del Programming Club (Delpro). The goal was to create a high-energy visual that symbolizes progress and good fortune for the club members and the wider community.</p>
       <div className="flex flex-col gap-2">
         <h3 className="font-bold text-[16px] text-white">Key Highlights</h3>
@@ -261,7 +284,7 @@ export default function Home() {
   
   const himsiDesc = (
     <div className="text-[13px] font-sans flex flex-col gap-4">
-      <h2 className="text-[22px] font-black leading-tight text-[#C62828] uppercase tracking-tighter">Project Overview: Valentine Menfess Campaign – HIMSI IT Del</h2>
+      <h2 className="text-[22px] font-black leading-tight text-[#C62828] uppercase tracking-tighter">Project Overview: Valentine Menfess Campaign</h2>
       <p className="text-white/90 leading-relaxed font-medium pb-3 border-b border-white/10">This project involved designing a digital social media poster for the Information Systems Student Association (HIMSI) at Institut Teknologi Del. The campaign was launched for Valentine’s Day, specifically to promote an anonymous "menfess" (mention confession) platform, allowing students to send messages and greetings within the campus community.</p>
       <div className="flex flex-col gap-2">
         <h3 className="font-bold text-[16px] text-white">Key Highlights</h3>
@@ -281,7 +304,7 @@ export default function Home() {
   
   const idulfitriDesc = (
     <div className="text-[13px] font-sans flex flex-col gap-4">
-      <h2 className="text-[22px] font-black leading-tight text-[#E8D5B5] uppercase tracking-tighter">Project Overview: Eid Al-Fitr Greeting – Del Programming Club</h2>
+      <h2 className="text-[22px] font-black leading-tight text-[#E8D5B5] uppercase tracking-tighter">Project Overview: Eid Al-Fitr Greeting</h2>
       <p className="text-white/90 leading-relaxed font-medium pb-3 border-b border-white/10">This project involved creating a digital greeting for Eid Al-Fitr (1 Syawal 1447 H) for the Del Programming Club (Delpro). The design aims to convey a message of victory, purity, and solemnity through a clean, modern, and professional aesthetic.</p>
       <div className="flex flex-col gap-2">
         <h3 className="font-bold text-[16px] text-white">Key Highlights</h3>
@@ -326,9 +349,16 @@ export default function Home() {
             onClick={handleSoraClick}
           />
 
-          <PortfolioItem url="/scholarsaveapp.png" targetHeight={uniformHeight} position={[3.5, 2, 1]} visible={showAbout} opacity={fadeOutOpacity} />
+          {/* --- SCHOLARSAVE CARD YANG SUDAH INTERAKTIF --- */}
+          <PortfolioItem 
+            url="/scholarsaveapp.png" 
+            targetHeight={scholarStep === 1 ? 2.5 : uniformHeight} 
+            position={scholarPosition} 
+            visible={showAbout} 
+            opacity={scholarOpacity}
+            onClick={handleScholarClick}
+          />
           
-          {/* --- WHOOSH CARD YANG SUDAH INTERAKTIF --- */}
           <PortfolioItem 
             url="/whooshapp.png" 
             targetHeight={whooshStep === 1 ? 2.5 : uniformHeight} 
