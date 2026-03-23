@@ -254,7 +254,7 @@ export default function ScholarSaveCaseStudy() {
                <PhoneMockup src="/ScholarSave4.png" alt="Promo Lists" className="w-36 md:w-60 absolute translate-x-[80%] md:translate-x-[110%] scale-90 opacity-90 z-10 hover:-translate-y-4 transition-transform duration-300" />
             </div>
 
-            {/* 6 KOLOM GRID (HANYA MOCKUP TANPA DESKRIPSI TEKS) */}
+            {/* 6 KOLOM GRID */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-7xl mx-auto px-10 border-t border-slate-200 pt-20">
                <div className="flex flex-col items-center">
                  <PhoneMockup src="/ScholarSave5.png" alt="ScholarSave Interface 1" className="w-full max-w-[270px] hover:-translate-y-4 transition-transform duration-300 shadow-xl" />
