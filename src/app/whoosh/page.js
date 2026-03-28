@@ -45,6 +45,20 @@ export default function WhooshCaseStudy() {
             <p className="text-lg md:text-xl font-light text-[#D8DED5] max-w-xl leading-relaxed mx-auto md:mx-0">
               Simplifying the high-speed train booking process in Indonesia. <br/><strong className="text-white">Quick, intuitive, and paperless.</strong>
             </p>
+            
+            {/* TOMBOL EXPLORE NOW */}
+            <div className="mt-8 flex justify-center md:justify-start">
+              <a 
+                href="https://www.figma.com/proto/XM60BbIUaxIHjy90Lgsb4Z/whoosh?node-id=1-26&t=a6XWWpUY4LXBKF0d-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A11"
+                target="_blank" 
+                rel="noreferrer"
+                className="bg-white text-[#546654] px-8 py-3.5 rounded-full font-bold text-base hover:bg-[#E8EBE6] hover:scale-105 transition-all shadow-[0_10px_20px_rgba(0,0,0,0.2)] flex items-center gap-2"
+              >
+                Explore Now <span className="text-xl leading-none mb-1">↗</span>
+              </a>
+            </div>
+            {/* ======================================= */}
+
           </div>
           
           <div className="flex-1 flex justify-center relative w-full mt-10 md:mt-0 z-10">
@@ -56,7 +70,7 @@ export default function WhooshCaseStudy() {
 
       <div className="max-w-6xl mx-auto px-6 mt-20 space-y-28">
 
-        {/* OVERVIEW SECTION DENGAN TAMBAHAN KONTEKS */}
+        {/* OVERVIEW SECTION */}
         <section className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
           <div className="md:col-span-1 sticky top-24">
             <h2 className="text-3xl font-black text-[#546654] mb-4">Project Overview</h2>
