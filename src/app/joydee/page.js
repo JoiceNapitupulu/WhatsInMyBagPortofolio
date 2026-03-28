@@ -47,10 +47,10 @@ export default function JoyDeeCaseStudy() {
               A Sweet Digital Experience Exploration. <br/><strong className="font-light">Premium dessert shop concept with a minimalist UI and soft color palettes.</strong>
             </p>
             
-            {/* Button Explore Now */}
+            {/* Button Explore Now - LINK DIPERBARUI */}
             <div className="mt-8 flex justify-center md:justify-start">
               <a 
-                href="#" 
+                href="https://www.figma.com/proto/ZrDAwCkeWRblN75Ij1KFR2/JoyDee?node-id=1-94&t=aZ83AiOayfeny31R-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1" 
                 target="_blank" 
                 rel="noreferrer"
                 className="bg-white text-[#C27A7E] px-8 py-3.5 rounded-full font-bold text-base hover:bg-pink-50 hover:scale-105 transition-all shadow-[0_10px_20px_rgba(0,0,0,0.1)] flex items-center gap-2"
@@ -63,8 +63,7 @@ export default function JoyDeeCaseStudy() {
           
           <div className="flex-1 flex justify-center relative w-full mt-10 md:mt-0 z-10">
              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-white/20 rounded-full blur-2xl"></div>
-             {/* Hero Image (Dashboard/Menu Utama) */}
-             <PhoneMockup src="/JoyDee4.png" alt="JoyDee Home" className="w-56 md:w-64 hover:-translate-y-4 transition-transform duration-500 ease-out shadow-[0_30px_60px_rgba(163,92,96,0.5)]" />
+             <PhoneMockup src="/JoyDee2.png" alt="JoyDee Home" className="w-56 md:w-64 hover:-translate-y-4 transition-transform duration-500 ease-out shadow-[0_30px_60px_rgba(163,92,96,0.5)]" />
           </div>
         </div>
       </section>
@@ -179,10 +178,11 @@ export default function JoyDeeCaseStudy() {
           </div>
         </section>
 
-        {/* DESIGN SHOWCASE (FULL GALLERY) */}
+        {/* DESIGN SHOWCASE */}
         <section className="pt-10 border-t border-[#F5E1E2]">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-black text-[#4A3535] mb-4">Design Showcase</h2>
+            <p className="text-[#8A6A6A] max-w-2xl mx-auto">End-to-end user journey for a sweet experience.</p>
             <div className="w-16 h-1.5 bg-[#D47A7E] rounded-full mx-auto mt-6"></div>
           </div>
 
@@ -190,35 +190,91 @@ export default function JoyDeeCaseStudy() {
             
             {/* HERO APP SCREENS OVERLAP */}
             <div className="relative w-full h-[500px] md:h-[650px] flex justify-center items-center overflow-hidden py-10">
-               <PhoneMockup src="/JoyDee2.png" alt="Login" className="w-36 md:w-60 absolute -translate-x-[110%] md:-translate-x-[130%] scale-75 opacity-80 blur-[1px] z-0 hover:z-30 hover:scale-90 hover:opacity-100 hover:blur-none transition-all duration-500" />
-               <PhoneMockup src="/JoyDee3.png" alt="Sign Up" className="w-40 md:w-64 absolute -translate-x-[55%] md:-translate-x-[70%] scale-90 opacity-95 z-10 hover:z-30 hover:scale-100 transition-all duration-500" />
-               <PhoneMockup src="/JoyDee4.png" alt="Discovery" className="w-48 md:w-72 absolute z-20 hover:-translate-y-6 transition-transform duration-500 shadow-[0_30px_60px_rgba(74,53,53,0.3)]" />
-               <PhoneMockup src="/JoyDee6.png" alt="Menu/Cart" className="w-40 md:w-64 absolute translate-x-[55%] md:translate-x-[70%] scale-90 opacity-95 z-10 hover:z-30 hover:scale-100 transition-all duration-500" />
-               <PhoneMockup src="/JoyDee10.png" alt="Success" className="w-36 md:w-60 absolute translate-x-[110%] md:translate-x-[130%] scale-75 opacity-80 blur-[1px] z-0 hover:z-30 hover:scale-90 hover:opacity-100 hover:blur-none transition-all duration-500" />
+               <PhoneMockup src="/JoyDee1.png" alt="Login" className="w-36 md:w-60 absolute -translate-x-[110%] md:-translate-x-[130%] scale-75 opacity-80 blur-[1px] z-0 hover:z-30 hover:scale-90 hover:opacity-100 hover:blur-none transition-all duration-500" />
+               <PhoneMockup src="/JoyDee4.png" alt="Product" className="w-40 md:w-64 absolute -translate-x-[55%] md:-translate-x-[70%] scale-90 opacity-95 z-10 hover:z-30 hover:scale-100 transition-all duration-500" />
+               <PhoneMockup src="/JoyDee2.png" alt="Discovery" className="w-48 md:w-72 absolute z-20 hover:-translate-y-6 transition-transform duration-500 shadow-[0_30px_60px_rgba(74,53,53,0.3)]" />
+               <PhoneMockup src="/JoyDee9.png" alt="Review" className="w-40 md:w-64 absolute translate-x-[55%] md:translate-x-[70%] scale-90 opacity-95 z-10 hover:z-30 hover:scale-100 transition-all duration-500" />
+               <PhoneMockup src="/JoyDee8.png" alt="Success" className="w-36 md:w-60 absolute translate-x-[110%] md:translate-x-[130%] scale-75 opacity-80 blur-[1px] z-0 hover:z-30 hover:scale-90 hover:opacity-100 hover:blur-none transition-all duration-500" />
             </div>
 
-            {/* DYNAMIC GRID GALLERY UNTUK 10 MOCKUPS */}
-            
-            {/* Row 1: 3 Items */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto px-10 pt-10">
-               <div className="flex justify-center"><PhoneMockup src="/JoyDee1.png" alt="JoyDee Screen 1" className="w-full max-w-[260px] hover:-translate-y-4 transition-transform duration-300 shadow-xl" /></div>
-               <div className="flex justify-center mt-10 md:mt-0"><PhoneMockup src="/JoyDee2.png" alt="JoyDee Screen 2" className="w-full max-w-[260px] hover:-translate-y-4 transition-transform duration-300 shadow-xl" /></div>
-               <div className="flex justify-center mt-10 md:mt-0"><PhoneMockup src="/JoyDee3.png" alt="JoyDee Screen 3" className="w-full max-w-[260px] hover:-translate-y-4 transition-transform duration-300 shadow-xl" /></div>
+            {/* USER JOURNEY FLOW GRID (6 MAIN SCREENS DENGAN DESKRIPSI) */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-7xl mx-auto px-10 border-t border-[#F5E1E2] pt-16">
+               <div className="flex flex-col items-center gap-6">
+                 <PhoneMockup src="/JoyDee1.png" alt="JoyDee Onboarding" className="w-full max-w-[240px] hover:scale-105 transition-transform duration-300 shadow-[0_15px_40px_rgba(212,122,126,0.15)]" />
+                 <div className="text-center mt-4">
+                    <div className="w-8 h-8 rounded-full bg-[#D47A7E] text-white flex items-center justify-center font-bold mx-auto mb-3">1</div>
+                    <h3 className="font-bold text-[#4A3535] text-lg">Onboarding</h3>
+                    <p className="text-[#8A6A6A] text-sm px-2">Minimalist login screen for quick access.</p>
+                 </div>
+               </div>
+
+               <div className="flex flex-col items-center gap-6 mt-10 md:mt-0">
+                 <PhoneMockup src="/JoyDee2.png" alt="JoyDee Discovery" className="w-full max-w-[240px] hover:scale-105 transition-transform duration-300 shadow-[0_15px_40px_rgba(212,122,126,0.15)]" />
+                 <div className="text-center mt-4">
+                    <div className="w-8 h-8 rounded-full bg-[#C27A7E] text-white flex items-center justify-center font-bold mx-auto mb-3">2</div>
+                    <h3 className="font-bold text-[#4A3535] text-lg">Discovery</h3>
+                    <p className="text-[#8A6A6A] text-sm px-2">Home screen featuring Top Picks and New arrivals.</p>
+                 </div>
+               </div>
+
+               <div className="flex flex-col items-center gap-6 mt-10 lg:mt-0">
+                 <PhoneMockup src="/JoyDee4.png" alt="JoyDee Product Detail" className="w-full max-w-[240px] hover:scale-105 transition-transform duration-300 shadow-[0_15px_40px_rgba(212,122,126,0.15)]" />
+                 <div className="text-center mt-4">
+                    <div className="w-8 h-8 rounded-full bg-[#A35C60] text-white flex items-center justify-center font-bold mx-auto mb-3">3</div>
+                    <h3 className="font-bold text-[#4A3535] text-lg">Transparency</h3>
+                    <p className="text-[#8A6A6A] text-sm px-2">Detailed product pages with ingredients and prices.</p>
+                 </div>
+               </div>
+
+               <div className="flex flex-col items-center gap-6 mt-10">
+                 <PhoneMockup src="/JoyDee9.png" alt="JoyDee Review Order" className="w-full max-w-[240px] hover:scale-105 transition-transform duration-300 shadow-[0_15px_40px_rgba(212,122,126,0.15)]" />
+                 <div className="text-center mt-4">
+                    <div className="w-8 h-8 rounded-full bg-[#D47A7E] text-white flex items-center justify-center font-bold mx-auto mb-3">4</div>
+                    <h3 className="font-bold text-[#4A3535] text-lg">Order Confidence</h3>
+                    <p className="text-[#8A6A6A] text-sm px-2">Review your order with shipping and payment summaries.</p>
+                 </div>
+               </div>
+
+               <div className="flex flex-col items-center gap-6 mt-10">
+                 <PhoneMockup src="/JoyDee6.png" alt="JoyDee Checkout" className="w-full max-w-[240px] hover:scale-105 transition-transform duration-300 shadow-[0_15px_40px_rgba(212,122,126,0.15)]" />
+                 <div className="text-center mt-4">
+                    <div className="w-8 h-8 rounded-full bg-[#C27A7E] text-white flex items-center justify-center font-bold mx-auto mb-3">5</div>
+                    <h3 className="font-bold text-[#4A3535] text-lg">Secure Checkout</h3>
+                    <p className="text-[#8A6A6A] text-sm px-2">Multi-step payment supporting major digital methods.</p>
+                 </div>
+               </div>
+
+               <div className="flex flex-col items-center gap-6 mt-10">
+                 <PhoneMockup src="/JoyDee8.png" alt="JoyDee Success" className="w-full max-w-[240px] hover:scale-105 transition-transform duration-300 shadow-[0_15px_40px_rgba(212,122,126,0.15)]" />
+                 <div className="text-center mt-4">
+                    <div className="w-8 h-8 rounded-full bg-[#A35C60] text-white flex items-center justify-center font-bold mx-auto mb-3">6</div>
+                    <h3 className="font-bold text-[#4A3535] text-lg">Success Feedback</h3>
+                    <p className="text-[#8A6A6A] text-sm px-2">Clear visual confirmation once transaction is successful.</p>
+                 </div>
+               </div>
             </div>
 
-            {/* Row 2: 4 Items */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto px-10 pt-6">
-               <div className="flex justify-center"><PhoneMockup src="/JoyDee4.png" alt="JoyDee Screen 4" className="w-full max-w-[240px] hover:-translate-y-4 transition-transform duration-300 shadow-xl" /></div>
-               <div className="flex justify-center mt-10 md:mt-0"><PhoneMockup src="/JoyDee5.png" alt="JoyDee Screen 5" className="w-full max-w-[240px] hover:-translate-y-4 transition-transform duration-300 shadow-xl" /></div>
-               <div className="flex justify-center mt-10 lg:mt-0"><PhoneMockup src="/JoyDee6.png" alt="JoyDee Screen 6" className="w-full max-w-[240px] hover:-translate-y-4 transition-transform duration-300 shadow-xl" /></div>
-               <div className="flex justify-center mt-10 lg:mt-0"><PhoneMockup src="/JoyDee7.png" alt="JoyDee Screen 7" className="w-full max-w-[240px] hover:-translate-y-4 transition-transform duration-300 shadow-xl" /></div>
-            </div>
-
-            {/* Row 3: 3 Items */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto px-10 pt-6 border-b border-[#F5E1E2] pb-20">
-               <div className="flex justify-center"><PhoneMockup src="/JoyDee8.png" alt="JoyDee Screen 8" className="w-full max-w-[260px] hover:-translate-y-4 transition-transform duration-300 shadow-xl" /></div>
-               <div className="flex justify-center mt-10 md:mt-0"><PhoneMockup src="/JoyDee9.png" alt="JoyDee Screen 9" className="w-full max-w-[260px] hover:-translate-y-4 transition-transform duration-300 shadow-xl" /></div>
-               <div className="flex justify-center mt-10 md:mt-0"><PhoneMockup src="/JoyDee10.png" alt="JoyDee Screen 10" className="w-full max-w-[260px] hover:-translate-y-4 transition-transform duration-300 shadow-xl" /></div>
+            {/* ADDITIONAL SCREENS (SISA MOCKUPS) */}
+            <div className="bg-[#FFF5F6] rounded-3xl mt-20 p-10 border border-[#F5E1E2]">
+              <h3 className="text-2xl font-black text-center text-[#4A3535] mb-10">Additional Interfaces</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+                 <div className="flex flex-col items-center gap-4">
+                   <PhoneMockup src="/JoyDee3.png" alt="Product Variation" className="w-full max-w-[200px] hover:-translate-y-2 transition-transform duration-300 shadow-md" />
+                   <h3 className="font-bold text-[#4A3535] text-sm">Product Variation</h3>
+                 </div>
+                 <div className="flex flex-col items-center gap-4 mt-8 md:mt-0">
+                   <PhoneMockup src="/JoyDee5.png" alt="Shopping Cart" className="w-full max-w-[200px] hover:-translate-y-2 transition-transform duration-300 shadow-md" />
+                   <h3 className="font-bold text-[#4A3535] text-sm">Shopping Cart</h3>
+                 </div>
+                 <div className="flex flex-col items-center gap-4 mt-8 lg:mt-0">
+                   <PhoneMockup src="/JoyDee7.png" alt="Security PIN" className="w-full max-w-[200px] hover:-translate-y-2 transition-transform duration-300 shadow-md" />
+                   <h3 className="font-bold text-[#4A3535] text-sm">Security Verification</h3>
+                 </div>
+                 <div className="flex flex-col items-center gap-4 mt-8 lg:mt-0">
+                   <PhoneMockup src="/JoyDee10.png" alt="Brand Splash" className="w-full max-w-[200px] hover:-translate-y-2 transition-transform duration-300 shadow-md" />
+                   <h3 className="font-bold text-[#4A3535] text-sm">Brand Splash</h3>
+                 </div>
+              </div>
             </div>
 
           </div>
