@@ -18,6 +18,26 @@ export default function About() {
     }
   };
 
+  // Daftar skill untuk section bawah
+  const skills = [
+    "UI/UX DESIGN",
+    "FIGMA",
+    "PROTOTYPING",
+    "WIREFRAMING",
+    "GRAPHIC DESIGN",
+    "CANVA",
+    "ADOBE ILLUSTRATOR",
+    "FRONT-END DEV",
+    "REACT & NEXT.JS",
+    "TAILWIND CSS",
+    "JAVASCRIPT",
+    "SOFTWARE DEV",
+    "CONTENT CREATION",
+    "SOCIAL MEDIA",
+    "PROJECT MANAGEMENT",
+    "GITHUB"
+  ];
+
   return (
     <main className="min-h-screen bg-white text-black font-sans relative overflow-x-hidden selection:bg-pink-200">
       
@@ -29,12 +49,14 @@ export default function About() {
         <span>←</span> Back to Bag
       </Link>
 
+      {/* ========================================= */}
+      {/* SECTION ATAS: PROFIL ASLI KAMU */}
+      {/* ========================================= */}
       <div className="max-w-[1200px] mx-auto min-h-screen flex flex-col md:flex-row items-center justify-center gap-10 p-8 pt-24">
         
         {/* KOLOM KIRI - KUMPULAN STIKER & GAMBAR */}
         <div className="w-full md:w-1/2 flex items-center justify-center pt-10 md:pt-0">
           
-          {/* CONTAINER UTAMA: Ditambah -translate-y-16 md:-translate-y-24 biar posisinya naik ke atas! */}
           <div className="relative w-64 md:w-80 flex items-center justify-center -translate-y-12 md:-translate-y-24">
             
             {/* 1. Tools Palette */}
@@ -106,15 +128,16 @@ export default function About() {
 
           <div className="grid grid-cols-2 gap-x-8 gap-y-6">
             
+            {/* INI BAGIAN ICON YANG SUDAH DI-UPDATE MENGGUNAKAN GAMBAR */}
             <div>
               <h3 className="text-xl font-black mb-3">Softwares</h3>
-              <div className="flex flex-wrap gap-2">
-                <div className="w-10 h-10 bg-[#FF9A00] rounded-[10px] flex items-center justify-center font-bold text-white text-sm shadow-md">Ai</div>
-                <div className="w-10 h-10 bg-[#00C4CC] rounded-[10px] flex items-center justify-center font-bold text-white text-sm shadow-md">Cv</div>
-                <div className="w-10 h-10 bg-[#E34F26] rounded-[10px] flex items-center justify-center font-bold text-white text-sm shadow-md">Ht</div>
-                <div className="w-10 h-10 bg-[#1572B6] rounded-[10px] flex items-center justify-center font-bold text-white text-sm shadow-md">Cs</div>
-                <div className="w-10 h-10 bg-[#F7DF1E] rounded-[10px] flex items-center justify-center font-bold text-black text-sm shadow-md">Js</div>
-                <div className="w-10 h-10 bg-black rounded-[10px] flex items-center justify-center font-bold text-white text-sm shadow-md">Gh</div>
+              <div className="flex flex-wrap gap-3">
+                <img src="/adobeillustrator.png" alt="Adobe Illustrator" className="w-10 h-10 object-contain hover:-translate-y-1 transition-transform drop-shadow-md rounded-xl" />
+                <img src="/Canva.png" alt="Canva" className="w-10 h-10 object-contain hover:-translate-y-1 transition-transform drop-shadow-md rounded-[10px]" />
+                <img src="/HTML5.png" alt="HTML5" className="w-10 h-10 object-contain hover:-translate-y-1 transition-transform drop-shadow-md" />
+                <img src="/CSS3.png" alt="CSS3" className="w-10 h-10 object-contain hover:-translate-y-1 transition-transform drop-shadow-md" />
+                <img src="/javascript.svg" alt="JavaScript" className="w-10 h-10 object-contain hover:-translate-y-1 transition-transform drop-shadow-md rounded-md" />
+                <img src="/Github.png" alt="GitHub" className="w-10 h-10 object-contain hover:-translate-y-1 transition-transform drop-shadow-md rounded-full bg-white" />
               </div>
             </div>
 
@@ -149,6 +172,36 @@ export default function About() {
 
         </div>
       </div>
+
+      {/* ========================================= */}
+      {/* SECTION BAWAH: SKILLS GRID (DARK THEME) */}
+      {/* ========================================= */}
+      <section className="bg-[#0a0a0a] text-white py-24 w-full">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <p className="text-neutral-500 text-xs md:text-sm font-semibold tracking-[0.2em] uppercase mb-4">
+              Not trying to brag, but I genuinely have
+            </p>
+            <h2 className="text-4xl md:text-6xl font-black tracking-tight text-white flex items-center justify-center gap-3">
+              All Skills<span className="text-neutral-600">.</span>
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 border-l border-t border-white/10">
+            {skills.map((skill, idx) => (
+              <div 
+                key={idx} 
+                className="border-r border-b border-white/10 px-4 py-12 flex items-center justify-center text-center hover:bg-white/[0.03] transition-colors duration-300 cursor-default group"
+              >
+                <span className="text-xs md:text-[13px] font-bold tracking-[0.15em] uppercase text-neutral-400 group-hover:text-white transition-colors duration-300">
+                  {skill}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
     </main>
   );
 }
