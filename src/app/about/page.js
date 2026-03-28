@@ -128,9 +128,9 @@ export default function About() {
 
           <div className="grid grid-cols-2 gap-x-8 gap-y-6">
             
-            {/* INI BAGIAN ICON YANG SUDAH DI-UPDATE MENGGUNAKAN GAMBAR */}
+            {/* JUDUL DIUBAH MENJADI TOOLS & TECHNOLOGIES */}
             <div>
-              <h3 className="text-xl font-black mb-3">Softwares</h3>
+              <h3 className="text-xl font-black mb-3">Tools & Technologies</h3>
               <div className="flex flex-wrap gap-3">
                 <img src="/adobeillustrator.png" alt="Adobe Illustrator" className="w-10 h-10 object-contain hover:-translate-y-1 transition-transform drop-shadow-md rounded-xl" />
                 <img src="/Canva.png" alt="Canva" className="w-10 h-10 object-contain hover:-translate-y-1 transition-transform drop-shadow-md rounded-[10px]" />

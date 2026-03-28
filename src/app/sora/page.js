@@ -38,7 +38,7 @@ export default function SoraCaseStudy() {
 
         <div className="max-w-6xl mx-auto relative z-10 flex flex-col md:flex-row items-center gap-12">
           <div className="flex-1 text-center md:text-left z-20">
-            <p className="text-[#2980B9] font-bold tracking-widest uppercase text-sm mb-4">UX/UI Case Study</p>
+            <p className="text-[#2980B9] font-bold tracking-widest uppercase text-sm mb-4">UX/UI Case Study & Tech Dev</p>
             <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight tracking-tighter">
               Sora <br/><span className="text-3xl md:text-5xl font-light italic text-slate-300">(Samosir E-Boat)</span>
             </h1>
@@ -46,15 +46,33 @@ export default function SoraCaseStudy() {
               Digitalizing Lake Toba's Water Transportation. <br/><strong className="text-white">Your Freedom, On the Water.</strong>
             </p>
             
-            {/* Button Explore Now */}
-            <div className="mt-8 flex justify-center md:justify-start">
+            {/* 3 TOMBOL ACTION BARU */}
+            <div className="mt-8 flex flex-wrap justify-center md:justify-start gap-4">
               <a 
-                href="https://www.figma.com/proto/9YcaCf0sZvmT2HfLinBQIp/Sora-kelompok-10?node-id=392-348&t=gBRAoWq0o64tAori-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=392%3A2" 
+                href="https://www.figma.com/proto/9YcaCf0sZvmT2HfLinBQIp/Sora-kelompok-10?node-id=392-348&t=gBRAoWq0o64tAori-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1" 
                 target="_blank" 
                 rel="noreferrer"
-                className="bg-white text-[#0C2D6B] px-8 py-3.5 rounded-full font-bold text-base hover:bg-slate-100 hover:scale-105 transition-all shadow-[0_10px_20px_rgba(0,0,0,0.2)] flex items-center gap-2"
+                className="bg-white text-[#0C2D6B] px-6 py-3 rounded-full font-bold text-sm hover:bg-slate-100 hover:scale-105 transition-all shadow-[0_10px_20px_rgba(0,0,0,0.2)] flex items-center gap-2"
               >
-                Explore Now <span className="text-xl leading-none mb-1">↗</span>
+                Explore Prototype <span className="text-lg leading-none mb-1">↗</span>
+              </a>
+              
+              {/* TOMBOL DOWNLOAD BUSINESS PLAN */}
+              <a 
+                href="/W14S03_BP_10_Sora.pdf" 
+                download="Business_Plan_Sora.pdf"
+                className="bg-[#1A4B9C] border border-blue-400/30 text-white px-6 py-3 rounded-full font-bold text-sm hover:bg-[#2980B9] hover:scale-105 transition-all shadow-[0_10px_20px_rgba(0,0,0,0.2)] flex items-center gap-2"
+              >
+                📄 Business Plan
+              </a>
+
+              <a 
+                href="https://github.com/joicenapitupulu/boat-rental" 
+                target="_blank" 
+                rel="noreferrer"
+                className="bg-slate-900 border border-slate-700 text-white px-6 py-3 rounded-full font-bold text-sm hover:bg-black hover:scale-105 transition-all shadow-[0_10px_20px_rgba(0,0,0,0.2)] flex items-center gap-2"
+              >
+                💻 Source Code
               </a>
             </div>
 
@@ -69,7 +87,7 @@ export default function SoraCaseStudy() {
 
       <div className="max-w-6xl mx-auto px-6 mt-20 space-y-28">
 
-        {/* OVERVIEW SECTION DENGAN TAMBAHAN KONTEKS */}
+        {/* OVERVIEW SECTION */}
         <section className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
           <div className="md:col-span-1 sticky top-24">
             <h2 className="text-3xl font-black text-[#0C2D6B] mb-4">Project Overview</h2>
