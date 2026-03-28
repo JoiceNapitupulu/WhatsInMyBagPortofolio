@@ -135,9 +135,10 @@ export default function Home() {
   const [aboutStep, setAboutStep] = useState(0);
   const [soraStep, setSoraStep] = useState(0);
   const [whooshStep, setWhooshStep] = useState(0);
-  
-  // STATE BARU UNTUK SCHOLARSAVE
   const [scholarStep, setScholarStep] = useState(0);
+  
+  // STATE BARU UNTUK JOYDEE
+  const [joydeeStep, setJoydeeStep] = useState(0);
 
   const uniformHeight = 2; 
   const cardHeight = 3.5; 
@@ -149,7 +150,8 @@ export default function Home() {
       setAboutStep(0);
       setSoraStep(0); 
       setWhooshStep(0); 
-      setScholarStep(0); // Reset ScholarSave
+      setScholarStep(0); 
+      setJoydeeStep(0); // Reset JoyDee
     }
   };
 
@@ -159,6 +161,7 @@ export default function Home() {
     setSoraStep(0);
     setWhooshStep(0);
     setScholarStep(0);
+    setJoydeeStep(0);
     setFolderStep((prev) => (prev + 1) % 3);
   };
 
@@ -169,6 +172,7 @@ export default function Home() {
       setSoraStep(0);
       setWhooshStep(0);
       setScholarStep(0);
+      setJoydeeStep(0);
       setAboutStep(1); 
     } else if (aboutStep === 1) {
       router.push('/about'); 
@@ -182,6 +186,7 @@ export default function Home() {
       setAboutStep(0);
       setWhooshStep(0);
       setScholarStep(0);
+      setJoydeeStep(0);
       setSoraStep(1); 
     } else if (soraStep === 1) {
       router.push('/sora'); 
@@ -195,13 +200,13 @@ export default function Home() {
       setAboutStep(0);
       setSoraStep(0);
       setScholarStep(0);
+      setJoydeeStep(0);
       setWhooshStep(1); 
     } else if (whooshStep === 1) {
       router.push('/whoosh'); 
     }
   };
 
-  // LOGIKA KLIK SCHOLARSAVE
   const handleScholarClick = (e) => {
     e.stopPropagation();
     if (scholarStep === 0) {
@@ -209,13 +214,29 @@ export default function Home() {
       setAboutStep(0);
       setSoraStep(0);
       setWhooshStep(0);
+      setJoydeeStep(0);
       setScholarStep(1); 
     } else if (scholarStep === 1) {
       router.push('/scholarsave'); 
     }
   };
 
-  const isFocusingAny = folderStep > 0 || aboutStep > 0 || soraStep > 0 || whooshStep > 0 || scholarStep > 0;
+  // LOGIKA KLIK JOYDEE
+  const handleJoydeeClick = (e) => {
+    e.stopPropagation();
+    if (joydeeStep === 0) {
+      setFolderStep(0);
+      setAboutStep(0);
+      setSoraStep(0);
+      setWhooshStep(0);
+      setScholarStep(0);
+      setJoydeeStep(1); 
+    } else if (joydeeStep === 1) {
+      router.push('/joydee'); 
+    }
+  };
+
+  const isFocusingAny = folderStep > 0 || aboutStep > 0 || soraStep > 0 || whooshStep > 0 || scholarStep > 0 || joydeeStep > 0;
   const fadeOutOpacity = isFocusingAny ? 0.05 : 1; 
 
   let gdPosition = [0, 2.5, 1]; 
@@ -235,10 +256,14 @@ export default function Home() {
   let whooshOpacity = whooshStep > 0 ? 1 : fadeOutOpacity;
   if (whooshStep === 1) whooshPosition = [0, 0, 3.5];
 
-  // POSISI SCHOLARSAVE
   let scholarPosition = [3.5, 2, 1];
   let scholarOpacity = scholarStep > 0 ? 1 : fadeOutOpacity;
   if (scholarStep === 1) scholarPosition = [0, 0, 3.5];
+
+  // POSISI JOYDEE
+  let joydeePosition = [-3.5, -2, 1];
+  let joydeeOpacity = joydeeStep > 0 ? 1 : fadeOutOpacity;
+  if (joydeeStep === 1) joydeePosition = [0, 0, 3.5];
 
   const explodeStartPos = [0, 0, 3.5]; 
 
@@ -349,7 +374,6 @@ export default function Home() {
             onClick={handleSoraClick}
           />
 
-          {/* --- SCHOLARSAVE CARD YANG SUDAH INTERAKTIF --- */}
           <PortfolioItem 
             url="/scholarsaveapp.png" 
             targetHeight={scholarStep === 1 ? 2.5 : uniformHeight} 
@@ -368,7 +392,16 @@ export default function Home() {
             onClick={handleWhooshClick}
           />
 
-          <PortfolioItem url="/joydeeapp.png" targetHeight={uniformHeight} position={[-3.5, -2, 1]} visible={showAbout} opacity={fadeOutOpacity} />
+          {/* --- JOYDEE CARD YANG SUDAH INTERAKTIF --- */}
+          <PortfolioItem 
+            url="/joydeeapp.png" 
+            targetHeight={joydeeStep === 1 ? 2.5 : uniformHeight} 
+            position={joydeePosition} 
+            visible={showAbout} 
+            opacity={joydeeOpacity} 
+            onClick={handleJoydeeClick}
+          />
+
           <PortfolioItem url="/studycase.png" targetHeight={uniformHeight} position={[3.5, -2, 1]} visible={showAbout} opacity={fadeOutOpacity} />
           
           <PortfolioItem url="/about-me.png" targetHeight={aboutStep === 1 ? 2.5 : uniformHeight} position={amPosition} visible={showAbout} opacity={amOpacity} onClick={handleAboutClick} />
